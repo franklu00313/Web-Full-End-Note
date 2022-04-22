@@ -1,0 +1,26 @@
+連結CSS JS
+CSS 3個全域設定
+
+HTML
+review form html 用法 (input:type placeholder required,button submit)
+
+CSS
+bcc:linear gradient
+frank to list 置中
+input number arrows remove 直接查 copy 下來
+attibute css selector review
+button 
+cursor pointer
+
+font awesome cdnjs
+innerHTML 單引號
+動畫 keyframes
+i pointer-events none
+check toggle
+addEventListener => animationen d
+
+輸入完之後回復控隔
+預防輸入空格且alert
+
+
+Merge sort

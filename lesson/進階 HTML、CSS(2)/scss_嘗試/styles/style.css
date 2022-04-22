@@ -1,0 +1,36 @@
+header {
+  background-color: black;
+}
+
+header h1 {
+  color: aliceblue;
+}
+
+p {
+  color: blueviolet;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+p:hover {
+  color: aquamarine;
+}
+
+h1,
+p {
+  padding: 1rem;
+}
+
+p {
+  font-size: 3rem;
+}
+
+img {
+  width: 500px;
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 100% 50%;
+     object-position: 100% 50%;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,78 @@
+JS 並不是一個程式語言，是ECMA制定的標準
+
+目前最有名的更新在2015，ECMA2015 / ES6
+
+每個瀏覽器有各自的JS引擎，去理解&處理JS CODE
+
+array 相加
+直接相加 => 會變 string (X)
+arr1concat(arr2,arr3......) 會按順序
+
+
+NaN Infinity(無限大(也有負的)，infinity > 任何number => 回傳true)
+兩個type都是 number 
+number + string 的數學運算常出現 (家法除外)
+any number /0 => Infinity
+Infinity / Infinity  or 0/0 or 0*Infinity=> NaN
+NaN == NaN => false
+要判斷是否等於NaN => isNaN(input var)
+
+Spread Operators ...
+def function f(...arr) => 會自動把任意數量的輸入換成一個array (name這裡是arr)
+conat
+let arr = [...arr1,...arr2] => 形同concat
+
+
+
+Rest parameter => vector的概念(不用定長度的array) 沒講? 307
+
+
+Primitive datatype
+1. 並不適object，沒有properties & methods
+2. own the value, not just a ref to the momery (pass by value)
+3. primitive coercion
+primitive object 再呼叫method時會被強制(coercion )且silent的轉成object，使用後再回覆
+(也可以運用let name = new String("Frank"))的方式創造出object的string，但較量費記憶體並不建議)
+
+Reference datatype
+1. object & arrat belongs to here
+2. pass by ref
+
+string comparison
+1. 只比第一個字母 ("5">"10")
+2. 月後面月大 (Z>A)
+
+check if it's an array
+cause array is an object => typeof not working
+Array.isArray()
+
+Array funciton 
+1.map(func) : create new array by applying callback function to every element (remember to return, func can be anonymous/arrow...)
+map function (object example 參考
+
+2.find(func) => 找符合條件的第一個element，若找不到回傳undefined
+一樣超範例CODE
+
+3.filter(func) => 找符合條件的所有elements，找不到回傳空array
+
+4.some() => return boolean by checking if there's any element 符合條件
+
+5.every() => return boolean by checking if "every" element 符合條件
+
+arr.sort() => 會改變原本的arr !
+str.toUpperCase => 部會改變 str
+array of num 直接 sort => 會照string 的比較方式排列(只比第一個數字)
+arr.sort((a,b)=>{return a-b;}) => num 會小到大
+arr.sort((a,b)=>{return b-a;}) => num 會大到小
+
+strArr.sort((a,b) => {return a.length - b.length;}) => 照字串長度小到大排列
+
+for of loop (syntax)
+增加CODE的可閱讀性
+複習for loop forEach
+for (let n of numbers){} //只能用再iterable objects (nodelist /string等等)
+
+for in loop
+iterates over all enumerable properties of an obeject (array object都可以用)
+for (let i in Frank){console.log(Frank[i]}
+直接拿來用再array上會回傳object

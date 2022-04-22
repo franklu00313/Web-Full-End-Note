@@ -1,0 +1,30 @@
+$theme_padding: 1rem;
+
+header {
+  background-color: black;
+  h1 {
+    color: aliceblue;
+  }
+}
+
+p {
+  color: blueviolet;
+  transition: all 0.5s ease;
+  &:hover {
+    color: aquamarine;
+  }
+}
+
+h1,
+p {
+  padding: $theme_padding;
+}
+
+@import "./a";
+
+img {
+  width: 500px;
+  height: 600px;
+  object-fit: cover;
+  object-position: 100% 50%;
+}

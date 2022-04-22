@@ -1,0 +1,257 @@
+/* 全域變數設定 */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.1rem;
+}
+
+body {
+  padding: 2rem;
+  background-color: #aebed5;
+}
+
+/* 標題設計 */
+header {
+  background-color: #d3d3d3;
+  padding: 1rem 1.5rem;
+  border-radius: 10px 10px 0 0;
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+header h1 {
+  padding-bottom: 0.75rem;
+}
+
+header h3 {
+  font-size: 1em;
+  font-weight: 100;
+}
+
+/* 導覽列設計 */
+nav {
+  background-color: #2b2b2b;
+  border-bottom-right-radius: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  display: flex;
+}
+
+nav ul li a {
+  margin: 0;
+  padding: 0.75rem 1.5rem;
+  color: rgb(153, 152, 152);
+  text-decoration: none;
+
+  transition: all 0.5s ease;
+}
+
+#first {
+  padding: 0.75rem 2.5rem; /*第一個首頁較短，因此額外做padding拉長*/
+}
+
+nav ul li a:hover {
+  color: white;
+  background-color: cornflowerblue;
+  border-radius: 10px;
+}
+
+.active {
+  color: white; /*讓當前網頁亮著*/
+}
+
+/* 內容設計 */
+main {
+  display: flex;
+}
+
+section {
+  padding: 2rem 4rem;
+}
+
+section.left {
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  width: 70%;
+}
+
+section.right {
+  width: 30%;
+}
+
+section.right h4 {
+  font-size: 20px;
+}
+
+.APCS {
+  margin-top: 5rem;
+  width: 100%;
+  opacity: 20%;
+  border-radius: 10px;
+  transition: all 0.5s ease-in;
+}
+
+.APCS:hover {
+  opacity: 100%;
+}
+
+/* author page */
+
+/* 左半邊section，大頭貼&姓名 */
+#intro_left {
+  background-color: rgb(255, 255, 255);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 25%;
+}
+
+#my_picture {
+  width: 100%;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+
+#author_name {
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.line_id {
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  color: green;
+  transition: all 0.5s ease;
+}
+
+.line_id:hover {
+  color: rgb(5, 224, 5);
+}
+/* 讓大頭些&姓名可以一起往下滑 */
+div.scroll {
+  position: sticky;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 右邊自介section */
+#intro_right {
+  width: 75%;
+}
+ul.intro {
+  /*特別指定class，不然會影響到 nav bar*/
+  padding-left: 2em;
+}
+
+#intro_right h2 {
+  width: 100%;
+  padding-bottom: 0.35em;
+  padding: 0;
+}
+
+section#intro_right h2 {
+  color: saddlebrown;
+}
+
+li.intro {
+  margin: 0.3rem;
+  list-style: " \2728";
+  padding-left: 0.25em;
+}
+
+p.intro {
+  text-indent: 2em;
+  padding-left: 1em;
+}
+
+/*Responsive Web Design*/
+
+/* section */
+main {
+  width: 100%;
+  flex: display;
+  flex-wrap: wrap;
+}
+
+section.left {
+  flex: 7 1 700px;
+}
+
+section.right {
+  display: flex;
+  flex-direction: column;
+  flex: 3 1 300px;
+}
+
+#curve_chart {
+  width: 100%;
+  height: 100%;
+}
+
+/* 若用手機(又高又不寬)，只用100%會顯得圖片很窄 => width太低(代表是行動裝置)，使用media將height改為一半 */
+@media screen and (max-width: 500px) {
+  #curve_chart {
+    height: 50%;
+  }
+  .APCS {
+    width: 50%;
+    margin: 10% 25%;
+  }
+}
+
+/* nav bar */
+
+@media screen and (max-width: 800px) {
+  nav {
+    border-bottom-right-radius: 0;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+  nav ul li a {
+    width: 100%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    /* text-align: center; */
+  }
+  a#first {
+    padding-left: 1.5rem;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+}
+
+/* author page RWD  */
+
+@media screen and (max-width: 800px) {
+  #intro_left,
+  #intro_right {
+    width: 100%;
+  }
+  #my_picture {
+    width: 50%;
+    border-radius: 50%;
+    margin: 1rem 25%;
+  }
+
+  #intro_right {
+    padding: 2rem 1rem;
+  }
+}

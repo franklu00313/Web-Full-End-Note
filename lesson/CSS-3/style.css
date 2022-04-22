@@ -1,0 +1,55 @@
+/* Lisy Styling */
+
+ul {
+  list-style: "\1F60D";
+  /* list-style-type: none; */
+}
+
+ol {
+  list-style: upper-roman;
+}
+
+/* Table Styling */
+
+table,
+td {
+  border-collapse: collapse;
+  border: 3px solid rgb(187, 187, 187);
+}
+
+th {
+  border-bottom: 3px solid rgb(167, 167, 167);
+  background-color: lawngreen;
+  color: white;
+}
+
+tr {
+  background-color: aliceblue;
+  color: black;
+}
+
+td:hover {
+  background-color: rgb(66, 223, 66);
+}
+
+td,
+th {
+  padding: 5px;
+}
+
+/* opacity透明度 */
+h1 {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/*transition 轉場*/
+
+h1:hover {
+  color: gold;
+  background-color: darkred;
+}
+
+h1 {
+  transition: color 0.5s ease-in, background-color 0.5s 1s; /*緩入*/
+}

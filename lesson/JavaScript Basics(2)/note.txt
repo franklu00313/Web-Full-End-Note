@@ -1,0 +1,115 @@
+logical operator
+1. == / ===
+== : 比較兩邊的 values 是否相同，資料類型不同值一樣給過 => "3" ==3 =>true
+=== : 比較兩邊值&資料類型是否都相同 (跟一班程式的==一樣)
+2.!= !== 前面的反運算
+4 != "4" fasle
+4 !== "4" true (這是一班CODING在用的)
+
+and or operator
+&& ||
+
+if statement and condition
+用不同票價做練習
+if(){}
+else if(cond1 and cond2){}
+else{} =>要加分號嗎(?
+
+system improvement
+
+number=>string num.toString()
+string=>number Number(string)
+即便string本身不能被換成number，資料型態還是會換成number，但資料本身會變成NaN
+
+isNaN(變數) => 判斷是否為NaN
+不能用 變數==NaN => 永遠會return false (即便變數本身是nan也不行，原因之後會談到)
+
+Truthy and Falsy Value
+遇到會認定成false:
+false
+0
+"" (empty string)
+null
+undefined
+NaN
+其他都為true (-100也是true)
+
+Variable Nanming Convention(慣例)
+大部分人都這樣做，跟著做比較好讀懂，照做最好
+1. camelCase => 第二個英文字母大寫
+2. underline => camel_case
+3. const(只能被assign一次) with uppercase，通常用大寫命名，一看就知道是一個const
+
+
+Variable Nanming Convention(限制)
+一定得照做
+1. 命名不能由數字開頭! ex: 2p(X) p2(v)
+2. hyphen(-) in JS => 系統留給減法用，命名變數不能用到 ex:is-good(X)
+
+Array 
+let friends = ["Frank","Bob","Vicky"];
+Properties
+1.index : -1不能用，out of range=> undefined
+2.length : array.length
+
+Methods (會直接改變到array，不用在assign)
+1.push(var) : PUSH到最後面
+2.pop() : POP最後一個
+3.shift() : 最前面的pop掉
+4.unshift(var) : 插到array的最前面
+array 能有不同的datatype放在一起嗎? 待測
+
+Define Funtion
+function func_name(input var){}
+input var 部用宣告datatype
+
+return 同C++
+練習:溫度轉換(設func)，return轉換後，輸出
+push會return value，return new length
+
+Object
+分成properties & methods
+let ob_name = {name:"Frank",last_name:"Lu",marry:true,age:20}; //properties setting
+ob_name["name"] & ob_name.name => 都可以抓到該屬性
+
+method setting
+{
+直接在裡面define function 就好
+}
+
+this keyword : refers to the object that is calling the method。otherwise return window object(之後會講)
+this.age(呼叫自己的properties)
+
+Object and Array typeof
+typeof Object => object
+typeof array => object (其實array is a special type of object)
+
+Loop => C++ int 改成 let
+for (let i =0;i<10;i++)
+{}
+while => 同C++
+
+break & continue => 同C++
+
+loop through the array
+for (let i=0;i<array.length;i++)
+{array[i]~~~;}
+
+Math Object
+
+Math.PI => 3.14159...
+Math.pow(a,b)
+Math.random() => return 0~1的隨機數(0 is inclusive,but 1 is exclusive)
+Math.sqrt() => 平方根
+Math.abs() => 絕對值
+Math.floor() => 無條件捨去小數點
+Math.ceil() => 無條件進位
+
+Number guessing project
+自己實作之後再來對答案，用start&end兩個variable不停去reassign
+
+Reserved Words in JS
+被預訂起來的特殊字元，不能被拿來當var的名字
+ex: let let =3; (X)
+
+三題exercise做完再看看答案

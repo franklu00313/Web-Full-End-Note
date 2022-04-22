@@ -1,0 +1,135 @@
+@font-face {
+  font-family: "font_name";
+  src: url("../../清松手寫體2.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "font_name", sans-serif;
+  font-weight: 600;
+}
+
+body {
+  background-color: #b5fffc;
+  background-image: linear-gradient(
+    90deg,
+    #b5fffc 0%,
+    #ffffff 41%,
+    #ffdee9 100%
+  );
+}
+
+header {
+  font-weight: 800;
+
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  div {
+    div.text {
+      width: 55%;
+    }
+    div.num {
+      width: 10%;
+    }
+    div.button {
+      width: 20%;
+    }
+    display: flex;
+    justify-content: center;
+    margin: 0.15rem;
+    height: 8vh;
+  }
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  div.sort {
+    width: 10%;
+    height: 7vh;
+    margin: 2.5rem;
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+//section
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  div.todo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44vw;
+    transition: all 0.1s ease;
+    p {
+      height: 7vh;
+      line-height: 2vh;
+      // position: static;
+      &.todo-text {
+        width: 30vw;
+      }
+      &.todo-time {
+        width: 7vw;
+        text-align: center;
+      }
+      margin: 0rem 0.2rem;
+    }
+    button {
+      margin: 0.25rem 0.2rem;
+      width: 5vw;
+      height: 7vh;
+    }
+  }
+}
+
+i {
+  pointer-events: none;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  to {
+    transform: scale(0);
+  }
+}
+
+.done {
+  opacity: 0.75;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.1rem;
+}

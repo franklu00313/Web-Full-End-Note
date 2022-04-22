@@ -1,0 +1,79 @@
+figma
+
+先畫出想要的東西 在寫程式 比較有效率
+
+長方形 文字 大標小標 
+Ctrl+shift+g => 設成一個group
+layer 代表塗層，移到越上面代表越上層
+lock
+
+navigation bar => 做完一樣 group+lock
+
+corner radius => 圖形圓滑度
+
+Taiwan Project
+
+字體、title、description、link css
+
+標題 => header
+
+導覽列 => nav
+anchor tag 弄成 ul
+
+主要內容 <main>
+左右兩塊 <section> different class
+<p> + <head>
+
+
+Styling
+Header Styling body margin universal setting padding and margin
+
+box-sizing
+因padding 作用於block => 會出現水平scroll
+1. content-box (default)都往外推
+2. border-box 水平內縮上下一樣往外
+screenshot
+
+Navbar styling
+default > inferitance => color dont work
+display flex => 作用於 ul  NOT nav
+list-style-type
+padding left 讓左邊空多一點
+
+不同的導覽列做法
+1. 整個box可按 : li => flex，讓 container 內的都變display item，就可以對a設定上下padding(原本的inline element margin/padding 只能調左右)
+2. 只有字體可以按 : 直接設定在paading 在li裡就好
+
+ICON
+taiwan free icon 連接 CSS
+
+Google font
+noto sanc tc
+可依自己選擇font-size font-weight
+
+版型設計
+兩個大型的flex container => 一左一右
+空行 br
+text-align
+
+navigation improve 顯示現在在哪裡
+anchor tag class =active => css .active color:white
+a hover => color:white +  transition
+
+Google map setting
+to google map 查完複製連結
+
+right section => 變成flex 垂直的direction 然後置中
+br 在flexbox內無用 => 改用margin
+
+嵌入功能
+youtube => share => embed => 複製連結貼到HTML
+
+變化圖表
+google chart => get started => chart gallery => line chart
+<script> </script>複製貼到head
+<body>裡面的<div>丟到想放的地方
+改data columnn name title
+
+建立網頁的icon
+

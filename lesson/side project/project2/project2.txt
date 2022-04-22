@@ -1,0 +1,61 @@
+figma:
+新增frame調成1920*1080
+header列 = (ICON+字) & nav bar(gorup)
+加圖(讓他變黑方便加白字，方法是拉一張黑色長方形透明度調低)
+加白字在上面，加buttom(顏色可以用滴管抓)，調border-radius
+全部group+lock => page1 complete
+
+
+再拉一個1920*1080，貼齊第一頁
+放圖片近來，調border-radius讓Picture便圓形
+
+拉第三頁1920*500(之類的，總之不用那麼高)，拿來做footer
+背景稍微灰一點點
+用figma調整icon，linear可以練習一下
+
+
+Header HTML
+建造scss所需folder file
+title / description
+universal setting(padding0 那三個) => 練習變成import檔案
+設定字體 (可以找一些其他的ttf檔案)
+分logo & navbar 兩部分來寫 => 開兩個<div> (class: logo/nav)
+
+HEADER STYLING
+display flex
+改logo大小 => prefer 用vw改
+align-items:center => 似乎沒教過?
+nav bar複習，自己寫
+要怎麼把兩個div分開? => 分別設定兩個div的flex
+兩個div的文字對齊 => align-items:center
+處理不同裝置 => flex-wrap
+li間拉出空隙 => justify-content
+左div需要空系 => margin-left
+用media 處理icon太小的問題 => margin-left/height/width
+
+
+BACKGROUND IMAGE SETTING
+
+HTML設定部分:
+<main> <section>=>設定background-image
+<div>=>裝黑色filter
+<h3>兩個 vs <h3><br></h3> => prefer後面這個，排版好處理
+<buttom>
+
+SCSS設定部分:
+3:40 開始
+
+PAGE 2
+
+HTML
+heading + div(三個cards)
+
+SCSS
+
+min-height
+讓三張卡並排
+
+先做一個很淺的border:2px solid red，分別不同顏色在div跟section上面，方便排版
+span => inline vs div=> block
+
+media => 讓圖片太小的時候，改圖片sixe 

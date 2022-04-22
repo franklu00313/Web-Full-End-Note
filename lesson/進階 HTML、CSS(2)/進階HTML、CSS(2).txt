@@ -1,0 +1,58 @@
+進階HTML CSS
+
+User Snippet
+snippet(片段) + trigger(觸發)
+左下齒輪=>user snippet
+google=>snippet generator => 設定description,trigger(觸發條件)
+! icon練習設定
+
+Free Pictures
+unsplash / pexels 
+iStock (要花錢)
+
+Free Icons
+fony awesome / icon monster / icon8(最好看，但要標明出處)
+下載svg圖形，可直接拉到figma，伸縮畫質並不會改變，且可以修改各個component=>export png => 就可以拿來寫網頁了
+
+Free Animation and SVG
+
+unDraw(svg) / Freepik stories animation (可以設計影片，但要標明出處)
+
+
+HTML Bookmark
+同個網頁中建立連結 => 跳轉到同頁面的某個地方
+幫每個標題取id => 在body最前面建立目錄<ol> + <li>(裡面放<a>)，<a>裡面的href 連到#id
+記得target = "_self" ，別開到新視窗
+要慢慢滾動 而非瞬間到 => scroll behavior
+html{scroll-behavior:smooth;}
+
+Local Font
+清松手寫體
+@font-face{font-family:"自定義名稱"; src:url(./.ttf);}
+
+SASS
+安裝life saas compiler
+開一個新資料夾styles，裡面新增一個style.scss
+寫完之後，按下右下角 watch saas，就會進行complile
+
+1. nested CSS
+寫巢狀架構(符合人腦想法) => SCSS會自動幫你編譯成CSS語法
+
+2. variables變數
+$name:green; => 以後name要改只需要改定義就好
+
+3. self&
+&指向該大括號的自己, &:hover{background-color:green}
+
+4. import
+(1)分類 (2)重複利用
+_name.scss
+@import './選取'; => 會直接編譯該scss
+
+5. mixin function
+
+@mixin func_name{要做的事情}
+div {@include func_name(若不須傳入變數就不用寫)}
+
+object fit:cover => 讓失真的圖片不在被壓縮
+

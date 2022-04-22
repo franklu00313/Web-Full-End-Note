@@ -1,0 +1,91 @@
+connect to json file
+common js func
+
+console.log
+可以把字寫在F12的，console(控制台)
+
+alert
+顯示一個視窗，上面的字可以自己設定
+
+prompt
+也出現一個視窗，但用者可以輸入一些東西
+
+Assignments 
+variables 變數
+=:assign right to left
+let: let x =5
+const:const x=6; => 往後就不能再assing新的value
+以上兩個variable declaration(變數宣告)，只能宣告一次
+var:reassignment & redeclaration都可以，但並不好用 => 略過
+
+variable & function
+類比python : prompt類似input，alert類似print
+let name = prompt("請輸入你的姓名:");
+alert("Hello"+name)
+
+Number operators
+remainder 取餘數 => %
+power => 2**10
+x++; 等於 x=x+1
+x-- => x=x-1
+x = x+10 => x+=10
+
+string introduction
+雙引號/單引號 => string 宣告
+可交叉使用，如果想存的東西有其中一個引號
+
+String Concatenate 串接字串
+用"+"，實現字串的串接
+"-" => 不能做，回傳nan(not a number)
+* / => 同減法!
+
+string+number => concat (會把num轉成str後做相加)
+20+30+"Frank"+10+15 => "50Frank1015"
+
+JS註解
+單行 //
+多行 /*多行註解 */
+還是ctrl+/最好用
+
+primitive(原始的) data types => 建議六種都背起來
+number，可以直接console.log，也可以 num.toString()，但本身並不會return東西，要用num = num.toString()應該ㄅ
+num.toFixed(小數點後面要的位數)
+
+string
+以 let name = "Frank" 為例
+1. length => name.length (是string 這個物件的property，not function所以不用括號)
+
+2. retrieve character
+name[3] => "n"
+name[6]、name[-1] => undefined
+name[2:4] => 自己測試 => error
+
+3. slice()
+name.slice(2,4) => "an"，一樣含頭(inclusive)不含尾(exclusive)
+slice(beginIndex)
+slice(beginIndex, endIndex)
+可以用-1
+
+4. indexOf()
+name.indexOf("an") => return 2，回傳第一個找到的substring初始位置
+找不到 => 回傳-1
+
+5. toLowerCase() 全部換成小寫
+
+6. toUpperCase() 全部換成大小
+
+7. split => 跟python一樣，拆成array
+
+boolean : true、false不要引號
+typeof : console.log(typeof x,typeof y)，不佣括號
+
+undefined:尚未被定義
+let x;
+console.log(x) =>undefined
+
+null:啥都沒有
+let y = null;
+console.log(y) => null
+
+symbol =>基本上不會用到 不佣館
+let z = Symbol()

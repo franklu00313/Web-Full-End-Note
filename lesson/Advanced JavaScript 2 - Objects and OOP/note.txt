@@ -1,0 +1,112 @@
+execution context 執行環境
+
+分為global & local
+
+都有一個creation phase 在 execution phase之前(程式執行)
+(if global, window object gets instantiated)
+1. scope chain created
+2. this keyword generated
+3. hoisting
+
+
+
+initializer
+let var不需要，const需要
+
+re-declaration (重新宣告)
+let、const不行 var可以
+
+re-assignment (重新給值)
+let, var可以 const不行
+
+Hoisting
+發生在execution context的creation phase
+會分配記憶體空間給 function declaration & var
+但不會分配給 function expression, let, const
+
+console.log(x);
+var x= 10;
+
+console.log(x);
+let x= 10;
+
+hi function先call 在定義，在function declaration & expression的差異
+
+Scope 可接觸性 可見度
+
+global scope 全域變數
+在任何地方都是有意義的
+
+function scope
+it can only be seen inside the func, no meaning outside the function
+在function中創建的，出function就會消失 => 可見度僅限於兩個大括號之間
+
+block scope
+can only be seen inside a loop or a if statement
+其實跟function scope意義一樣，但var沒有block scope(唯一不同處) => 為什麼大家不喜歡用var的根本原因
+
+圖表可以截圖!
+
+Scope Chaining
+發生在 creation phase 
+
+closure  / scope chaining
+若func裡面沒有定義，會跑到function定義的地方去找，若沒有找到就會往在上層去找找看定義在哪
+
+Call Stack 
+
+stack : DS 後進先出 LIFO
+JS is single-thread 程式語言，do one thing at one time
+因此若在一個function執行另一個function(fi 裡面執行 f2)，會一層一層進去，f1進=>f2進=>f2出=>f1出，如一個stack
+call stack animation
+
+constructor function
+之前學的創造物件方法要一個一個打 => 太累了
+用這個constructor func大量製作相似object
+start with uppercase letter(usually naming convention)
+used with "new" keyword (is a reserved word) => 創造一個empty object
+
+要先定義constructor func
+然後 let Frank = new FuncName (input par1,par2......)
+需要有new 不然function裡面指的this是window
+copy video demo code
+
+Prototype
+OBJECT越多占用越多記憶體，兩個OBJECT之間的SAYHI是不同的(即便是同一個constructor，也會存在不同的記憶體空間)
+=>利用inheritance解決此問題，讓屬性不一樣，但共用同一個function=>prototype
+
+prototype is a simple ref to another obj, which contains commmon properties and methods across all instances
+簡單來說 就是把物件要共用的屬性跟方法放在這
+demo code
+
+prototype inheritance
+在創建OBJ的同時，可以從其他prototype繼承東西，例如array繼承array的prototype，array的prototype又繼承了obj的prototype......
+
+coercion
+string.upperCase() can work => 系統自動做了轉換成 new string的方式call玩(這時候有prototype inheritance所以能call)，又轉回來
+一班來說還是用primitive type比較好 => 省記憶體空間
+let a = new String("A") => object
+let a = "A" => string
+
+function methods => are object in JS
+function能共用以下三個method : bind call apply
+bind綁定對象(this的對象就不再是window了)，會回傳一個function要用變數接
+call執行
+demo code (多變數)
+apply 跟call非常像，只是後面的變數是用array保存
+
+prototype inheritance
+democode
+Student.prototype = Object.create(Person.prototype);
+
+js class只是一種語法糖，用來簡化 prototyple inheritance
+
+extends => 繼承
+super(代指superset，母集合)
+demo code (基本上都用這個 沒人用protoype，但記得她不識OO，只是類似的一個語法糖)
+
+static 可以搭配 properties & methods
+讓該property or method屬於class，而不是屬於instance本身 (也就是說同一個class的object之間共用同一個)
+應該: 不需要建立OBJECT就能使用(?
+demo code
+  

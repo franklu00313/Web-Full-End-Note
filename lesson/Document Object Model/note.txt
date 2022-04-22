@@ -1,0 +1,220 @@
+瀏覽器打開 => window object 出現 (為一個global object)
+
+window object methods
+1.alert()
+真正用法是window.alert()
+window object => 不需要寫window (js 語法)
+
+2.addEventListener() 略
+3.clearInterval()
+牽涉到event
+4.prompt()
+5.setInterval(func,毫秒)
+每隔幾秒，執行一個函式 => 函示不用加()
+
+properties(以下四個都是Object，但不式所有properties都是object)
+1.console
+obect 可以式另一個object得property
+method: 
+log() => 正常輸出
+error() =>輸出紅色
+warn() => 輸出黃色
+2.Document (means the HTML document)
+本主題(DOM)
+model means all HTML elenments are objects
+methods:
+1. addEventListener() =>window/document 都有這個method
+
+2.createElement()
+在頁面中新增HTML程式碼(新增object)
+let myH = document.createElement("h1");
+console.log(myH); //雖然目前啥都沒有，是空的但之後會學到
+
+3. getElementsByld(id's string) => 設定變數回傳該object給變數
+若不只一個，會都回傳回來(變成一個dict?)
+
+4. getElementsByClassName()
+
+3.LocalStorage
+
+4. SessionStorage
+
+以下兩個比3.4實用，超重要!!
+5.querySelector() => 在HTML中做query(查詢)，用"CSS Selector"
+let x = document.querySelector("h1.first");
+只會return第一個滿足css selector 的 html element
+
+6.querySelectorAll()
+用法如上，但全部都會return (以NodeList的形式，not array)
+用x[0] x[1]......去access每個物件
+
+Arrow Function Expression
+與function decoration 相對
+另一個定義客制化function的方法
+let sayHi = (name) => {console.log("Hi"+name);}
+function decoration => hoisting，可以先執行在定義
+但arrow function expression 不行 !
+
+this keyword
+
+this在function decoration指該物件，arrow裡面是指window obeject
+this.name(property)
+arrow在object裡面定義ㄉ方視野不太一樣(回來找影片)
+
+forEachFunction
+another way to look through array
+list.forEach(function decoration 也可以直接放 function 名稱)
+會針對每一個空格中執行一次input裡面的function
+可用性&可讀性 相對 for loop來說更佳
+function名次在 for each裡面可以刪掉 => anonymous function
+也可以加入arrow function expression (最長用的寫法))
+callBack Function: Function to execute on each element
+index(optional) 用法
+array(optional) 用法
+
+
+Array
+length,index
+push pop shift unshift
+
+HTML Collection 
+document.setElementsByClassName(or ID) 同時選到多個的話
+
+
+NodeList
+document.querySelectorAll()回傳的東西
+
+HTML collection & NodeList 都有length index但都沒有push pop shift unshift
+
+Array NodeList 可以用 forEach，HTML 不型!! => 用queryselector的原因
+
+Element Object
+w3school dom element object
+different HTML element might have its own methids and properties
+all html elements must have properties and methods below:
+
+children/childNode
+return HTML Collection / NodeList
+大部分用children (childNode 會穿插一些text)
+
+parentElement
+回傳parent object，可以一路串下去找到最上面
+
+innerHTML/innerText
+當作HTML讀/當作純文字看待
+obj.innerHTML = "my name is frank" =>會讓標題出現字
+obj.innerText 跟上面用法一樣
+
+addEventListener()
+略
+
+appendChild()
+增加element的child element
+createElement => innerText => appendChild
+
+classList => 該tag 所有的class全部回傳回來
+add("class_name") 
+remove() 
+toggle() =>有就移除，沒有就加進去
+contains() => 查詢classList有沒有包含某個class，並回傳true /false
+
+
+getAttribute()
+取得在html裡面設定過的屬性，ex: title href......
+
+querySelector() querySelectorAll()
+以往是用document去call，但實際上任何object都可以call，但只會在該object下面找。document會找全部(因為document object下的HTML程式碼都是他的OBJECT)
+
+remove()
+obj.remove() => 直皆將該物件整個刪除
+
+style (本身是object)
+因JS不能用- => 在CSS中的-號，在JS中會被換成camel case型式 ex:background-color => in JS: backgroundColor
+這些做的設定都是inline styling (inline-styling > id >class>......)
+button.style.backgroundColor = "black"
+button.style.color = "white"
+同一次打後面直皆輸入CSS語法
+button.style = "background-color:black;color:white;"
+
+button.style="" => 刪除所有styling 不要任何的設定
+
+
+
+Inheritance(繼承) in DOM
+從一個object繼承他的method & properties
+all HTML elements inherit properties and methods from "element object"
+可以去w3schoolds的js and HTML DOM ref往下滑可以找到全部
+
+JS Events(事件)
+events occured when things happen in browse. ex:滑鼠點、鍵盤輸入、宜木大小調整等等
+事情發生時，需要偵探(event listener)，它會了解JS event 的細節
+addEventListener(event type,callback)
+通常call 它的object是 window object / element object
+callback-當偵測到要執行的callbak function
+e=>{console.log(e);}
+JS events are objects
+
+Event Object Inheritance
+w3school 查 event objects
+
+(root) Event Object Methods and Properties
+
+e.target() => 回傳發生event 的 object
+
+
+preventDefault() => 防止預設的事情發生
+e.preventDefault() =>假設是button被click得事件，表單就不會被交出去、也不會被重整
+
+
+Dynamic header (小小實做)
+要注意可能會被訂得比較精細得CSS selector蓋掉，導致轉顏色無效
+
+window.pageYoffset
+scroll event
+style object
+
+
+Event Bubbling 
+一個大的莊一個小得div，如果大跟小div都加了addEventListener => 案在小的div上兩個都會被執行
+會先執行小ㄉ然後執行大得
+
+how to stop? => stopPropagation() 停止擴散
+e.stopPropagation()後在執行你要的callback
+
+Storage Methods (windows object properties)
+storage => a place to store data in "browser" , not database
+
+以 key value pair 方式儲存, both must be "string"，且key不能重複(字典概念)
+
+method
+setItem(key,value) => 放東西進去
+getItem(key) => 用key抓某個資料
+removeItem(key) => 刪掉某東西
+clear() => 清空
+
+localStorage.setItem("name","wilson");
+localStorage.setItem("student","frank");
+let a = localStorage.getItem("name");
+console.log(a);
+localStorage.removeItem("name);
+localStorage.clear();
+
+怎麼看存的資料?
+Firefox => Storage
+Chrome => application => storage
+
+Session storage / local storage
+關掉瀏覽器就會清空/除非用localStorage.remove() or clear()，不然會一直存在(即便瀏覽器關了)
+
+如果不適用string存 => 會直接typecast to string
+
+
+JSON (JavaScript Object Notation)
+JSON.stringify() => 把某個東西換成string (存東西的時候要用)
+JSON.parse() => 取出來的時候要用到
+流程圖可以畫一下
+這方法任何object都可以適用
+
+script tag position 
+JS 要跑比較久 => 因此晚一點才跑，免得一進去一直在跑圓圈
+browser 在使用DOM前，需要先讀到所有的HTML&CSS 

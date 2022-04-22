@@ -1,0 +1,110 @@
+cd => change directory
+cd .. => 退回前一層
+
+dir=>顯示目前所在位置的東西
+
+mkdir 資料夾名稱 => 新增資料夾
+
+type nul> "index.html" 
+type nul>"app.js"
+type指文件類型、nul指沒有任何的文件類型 => 因此後面檔名一定要附
+
+cls 清空視窗 (但還是可以按上，找之前打過的command)
+
+code filename =>會直接用vscode幫你打開整個folder(等同open folder)
+
+unix
+對腦作業系統
+windows cmd(o) unix(x) => 可以靠下載git 順面載unix
+mac linux cmd(x) unix(o)
+
+unix command line
+
+pwd(print working directory)=>顯示目前工作資料夾(基本上就是顯示目前位置)
+
+ls (list all files)
+
+mkdir / touch index.html
+
+rm(remove) index.html
+
+rmdir fileName => 資料夾必須要空的才能刪
+
+rm -rf fileName => 強制刪掉整個資料夾(不管裡面有沒有東西)
+
+頁面太雜 => Ctrl+L 會把頁面滑到最下面 (很像清空)
+
+code file
+
+git:一個版本控制的軟體(需下載)
+github:可以用git來達到版本控制的線上平台
+圖 => 截圖
+
+add:從資料夾挑一些自己打算上傳的東西到staging area
+commit : 提交到local端坐版本控制了
+repository => git裡面的資料夾，大家一起工作的地方
+commit每一次版本的提交
+
+git command
+git init => 初始化一個.git的資料夾，裡面會追蹤有什麼改變
+
+git config --global user.name "Frank"
+git config --global user.email "franklu00313@gmail.com"
+git config --list => 查看做的config有沒有成功
+config => configuration 設定/配置
+
+git status
+
+git add index.html =>把他送進去之後要被commit的staging area裡面
+
+git add . => 全部都送進 staging area
+
+git commit -m "simple description about this commit"
+
+git rm --cached "index.html" => 將某個檔案移出staging area (rm=>remove cashed=>暫存)
+
+git add *.html => 所有的html都會被add進staging area
+
+git log => commit的歷史
+
+在folder中，建一個.gitignore，將不想被add到staging area的檔案檔名放進去，
+
+branch
+
+master/main 主幹
+
+git branch branch_name => 創出一個分支
+
+git checkout branchname => 轉到該分支
+
+把分支合併 => git merge branch_name(在主幹下執行)
+
+merge一定要先add&commit => commit後的內容才可以被merge
+
+merge conflict => 當要merge的東西有衝突時
+去vscode看current change(master) & incoming change(branch)差別，看要怎麼處理
+處理完之後儲存，回到git bash 做git add. & git commit -m "solve merge conflict"
+
+
+github
+push
+git remote add origin 複製HTTPS
+git push -u origin master =>推上github了
+
+可以新增readme，但是要用markdown語法
+
+push way 2
+git clone (網址) => 會複製整個file下來當目前的位置
+cd 進去該project
+git init (實際上不用做因為remote repo已經有init過了)
+改東西
+git add.
+git commit -m "some name"
+git push 網址
+
+git pull "網址" => 當同事push新東西上去時，可以用git pull得到他新的東西(基本上是fetch+merge)=>因此可能要處理merge conflict的問題
+
+source tree
+軟體下載
+直接拉進去
+

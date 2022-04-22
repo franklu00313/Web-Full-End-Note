@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "font_name";
+  src: url("../清松手寫體2.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "font_name", sans-serief;
+}

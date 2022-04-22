@@ -1,0 +1,34 @@
+RWD responsive web design 響應式網頁設計
+不論在什麼樣子的寬跟高，都可以正常顯示網頁
+
+html5up.net
+
+RWD原則
+能用flexbox 就用flexbox
+不能就用media query
+
+media query
+@media screen and (condition){動作}
+
+Taiwan project重新排版
+目的 : 圖表移到下方，NAVBAR字體縮小
+
+<section> => 用flex處理
+wrap + 測定左右section的flex:
+改google chart inline styling的固定寬高
+meida + max-width
+
+nav bar 
+1.往下移
+2.並排到不夠=>變直的
+先看多少width會走樣 => EX 625px
+media 寬度不夠 => flex direction : column
+
+
+Bootstrap
+前端圖書館，在copy paste
+get started=>copy link to head
+css設計很多，在html設定同一個class即可
+本身就是responsive !
+alers有字的長方形
+實用的card carousel dropdowns

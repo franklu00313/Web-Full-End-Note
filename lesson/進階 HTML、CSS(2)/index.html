@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="這是個介紹APCS的網站，同時提供課程幫助學生通過APCS檢定!"
+    />
+    <title>APCS介紹</title>
+    <!--load all styles -->
+    <!-- /fontawesome-free-5.15.4-web/css/all.css -->
+    <link
+      href="/resources/fontawesome-free-5.15.4-web/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="/resources/fontawesome-free-5.15.4-web/svgs/solid/laptop.svg"
+    />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google chart -->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Year", "報考人數"],
+          ["2019/10/26", 1844],
+          ["2020/01/05", 1931],
+          ["2020/07/04", 1585],
+          ["2020/10/17", 2265],
+          ["2021/01/09", 2962],
+        ]);
+
+        var options = {
+          title: "APCS歷屆報考人數",
+          curveType: "function",
+          legend: { position: "bottom" },
+        };
+
+        var chart = new google.visualization.LineChart(
+          document.getElementById("curve_chart")
+        );
+
+        chart.draw(data, options);
+      }
+    </script>
+
+    <!-- link css -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- 標題 -->
+    <header>
+      <h1>APCS 大學程式設計先修檢測</h1>
+      <h3>
+        藉由舉辦具公信力之「程式設計檢測」，讓具備程式設計能力之高中職學生，能夠檢驗學習成果，並供作大學選才的參考依據。
+      </h3>
+    </header>
+    <!-- 導覽列 -->
+    <nav>
+      <ul>
+        <!--#代表不用跳轉頁面-->
+        <li>
+          <a class="active" id="first" href="#"
+            ><i class="fas fa-home"></i> 首頁</a
+          >
+        </li>
+        <li>
+          <a href="./author.html"
+            ><i class="fas fa-feather-alt"></i> 關於作者</a
+          >
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-feather-alt"></i> 無用按鈕</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-feather-alt"></i> 無用按鈕</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-feather-alt"></i> 無用按鈕</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- 內容 -->
+    <main>
+      <!-- 左section -->
+      <section class="left">
+        <p>
+          APCS是「大學程式設計先修檢測」（Advanced Placement Computer
+          Science，APCS）的縮寫，主要在檢測考生程式設計的能力，讓具備程式設計能力的高中職學生，有一個具公信力的檢驗學習成果，並提供作為大學選才的參考依據。
+        </p>
+        <br />
+        <p>
+          APCS每年舉辦3次考試，分別在1月、6月及10月，線上報名大約在檢測日前二個月開放。
+        </p>
+        <br />
+        <div id="curve_chart"></div>
+      </section>
+      <!-- 右section -->
+      <section class="right">
+        <h4>APCS 小知識</h4>
+        <br />
+        <p>
+          APCS招生分組名額每年都在擴大，從107學年度提供50個，到111年已增加至118個!
+        </p>
+        <img src="/picture/programmer_ani.gif" class="code_pic2" alt="" />
+
+        <a target="_blank" href="https://apcs.csie.ntnu.edu.tw/"
+          ><img src="/picture/APCS.png" class="APCS" alt=""
+        /></a>
+        <img src="/picture/pair_programmer.png" class="code_pic1" alt="" />
+      </section>
+    </main>
+  </body>
+</html>
