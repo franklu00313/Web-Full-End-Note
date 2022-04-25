@@ -65,3 +65,5 @@ npmjs找 => npm init -y => npm install => require => use!!
 nodemon => 偵測到文件改變，自動重開node xx.js，不用一直重新整理
 
 script => 簡單自訂腳本
+
+http://127.0.0.1:5501/myForm.html?InputName=Peter+Wang&gender=male&telephone=0900123456
