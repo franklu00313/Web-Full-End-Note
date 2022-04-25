@@ -1,0 +1,67 @@
+下載code runner extension
+
+Static & Dynamic Website
+靜態網頁:先把HTML CSS JS都寫好，等使用者發request就把網頁傳給他
+動態:在使用者發出請求之前，是沒有這個網頁的，只有原料。當server收到請求之後，會去DB找他需要的資料，在回來server-side script把CSS JS HTML都做好，回傳給使用者
+user > server > server-side script > db > server-side script > server>user
+
+what is node?
+後端有很多種語言&框架，選node.js原因是不用換語言(仍然是JS)，所以好上手且很多人使用
+node.js 是JS的執行環境，讓我們能在browser以外的地方執行JS => 促使JS從單純的前端語言被賦予非常多的其他功能
+下載code runner之後，即可在終端機檢視JS的輸出，不需要再開網頁看
+
+Module Wrapper (important!)
+https://nodejs.org/docs/latest-v16.x/api/modules.html#the-module-wrapper
+看起來以為是global scope，但實際上node.js會把它包裝成一個function => 也就是變數其實是function(module) scope
+此外可以使用一些方便的變數如__filename __dirname等等
+
+(前面是兩個底線!)
+__filename => 整個檔案的路徑
+__dirname => 該資料夾的路徑(後面沒有\)
+
+exports, require, module
+module=> organized JS files which can be reuse in Node.js application
+
+製作自己的module
+
+module => 是一個很大的物件，裡面的export也是一個物件，我們把要輸出的function新增在裡面，其他檔案就能用到了
+require => 接要收的js路徑，回傳export裡面的物件=>就可以使用該module裡面的function了
+
+若有很多file => 會分門別類到不同種類的folder
+import一整個folder => 在FOLDER裡面建立一個index.js，在裡面require所有function並export => 並在app.js require資料夾本身(系統會自己找裡面的index.js)
+
+程式碼(範例)
+
+Node.js Built-in Modules
+
+path
+path.join(path1,path2)
+path.extname(__filename) => 回傳目前的副檔名
+path.basename(__filename) => 回傳單純的filename(不含path)
+
+url
+a = url.parse(pandasURL,true)
+a.host => host+port
+a.hostname => host
+a.pathname => port後面的path
+path => port後面全部
+query => 回傳object (搭配form 使用)
+
+fs
+writeFile(文件名稱,字串,error function(e))
+readFile(文件名稱,"utf8",error function(e,data))
+
+IP DNS Port
+IPv4 => IPv6 : 4=>8
+DNS => 將可讀的網域名稱轉為IP位址
+Port => 接口 連接埠，用以辨別USER需要什麼樣的服務(導向特定SERVER窗口)
+
+node server => 略，過，因為很麻煩，之後用express.js就好
+
+npm(node package manager)
+從網路上幹別人的module來用，npm就是負責管理這些外來模組的
+npmjs找 => npm init -y => npm install => require => use!!
+
+nodemon => 偵測到文件改變，自動重開node xx.js，不用一直重新整理
+
+script => 簡單自訂腳本
