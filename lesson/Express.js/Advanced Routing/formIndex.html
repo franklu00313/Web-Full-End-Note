@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--網頁相關資訊-->
+    <meta name="author" content="Chieh" />
+    <title></title>
+    <meta name="description" content="" />
+    <!--link到sass版的css-->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- 設定網站圖示 -->
+    <link rel="shortcut icon" href="" />
+    <link rel="bookmark" href="" />
+  </head>
+  <body>
+    <h1>GET Table</h1>
+    <!--action是要送去的地方(就是server端要設定的route)-->
+    <form action="/formGet" method="get">
+      <!-- label for & input id 要配對在一起，input name則是傳到後端的名字 -->
+      <label for="name">Name</label>
+      <input id="name" name="Name" type="text" />
+      <label for="age">Age</label>
+      <input id="age" name="age" type="number" />
+      <button type="submit">submit</button>
+    </form>
+    <br />
+    <h1>POST Table</h1>
+    <form action="/formPost" method="post">
+      <label for="name">Name</label>
+      <input id="name" name="Name" type="text" />
+      <label for="age">Age</label>
+      <input id="age" name="age" type="number" />
+      <button type="submit">submit</button>
+    </form>
+  </body>
+</html>

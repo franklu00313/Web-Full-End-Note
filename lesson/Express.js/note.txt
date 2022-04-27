@@ -1,0 +1,98 @@
+Express.js
+
+一個module，搭配Node.js讓node.js更方便
+是一個框架 for node.js applications
+Bootstrop => library vs framework
+library : 可用可不用
+framework : 得照規則走，會被侷限在裡面
+
+Get started
+npm init
+npm i express nodemon
+
+照抄npmjs 上面document的code
+
+export 的不同方式 => 只export一個東西
+慣例 express => const app = express();
+
+HTTP(超文字傳輸協議) Requests(使用者送到伺服器端的請求)
+
+GET 獲得資訊 most common
+POST 新增給SERVER一些東西
+
+PUT 替換(直接蓋掉，若無則新增)
+PATCH (部分更新)
+DELETE (刪除)
+
+
+Routing 設定不同路徑
+
+request handing => 處理各種不同的請求
+/ => homepage
+
+handling different request
+"/" => "/cheih" (給不同的頁面網址)
+
+send => 可以送object(在FIREFOX會直接跑出一個JSON的頁面),也可以送HTML的程式碼，但一次requset只能回傳一個response!!
+
+sendFile(__dirname + /fileName) => 直接送一整個HTML
+(也可以用用path)
+
+Advanced Routing
+
+routing for all
+放在全部route的最後面(app.js server是由上往下執行) "/" -> "*"
+找不到的頁面都會跑來這裡
+
+routing for pattern
+"/fruit/:someFruit/" => 我們可以在req拿到someFruit(user 輸入的東西)
+=> req.params = {someFruit:apple}
+
+通常搭配 Object Destructing:
+let { a, b } = { a: 10, b: 20 };
+
+routing for query =>製造form handling
+form => action是要送去的地方(就是server要設post的route)
+method 全部都要大寫!
+input id <=> label for
+input name 定義了才能傳送到後端(才會被丟進action裡面)
+
+post(不會顯示在上方) 要怎麼handling
+1. require body-parser
+2. middleware => app.use(bodyParser.urlendoded({extended:true}))
+3. POST中得˙req.body就會變成一個物件(使用者所給的資訊)
+
+backstick
+`i am ${varName}.`
+
+form get handling (get req資料會顯示在上面)
+處理方式前面東西都不需要
+req.query => 就可以直接獲得req.body的那個物件 (簡單、快很多) 
+
+Static File
+不能像以前一樣直接link => 伺服器需要做特別的設定 => serving a static file
+middleware => app.use(express.static("public"))
+開一個 public的資料夾，把靜態可以拿來用的放進去 (不一定要叫public)
+把CSS之類的往public裡面搬
+在index裡面link的時候 href從public之後開始寫路徑
+
+HTTP Status Code
+在SERVER所給的response裡面，代表SERVER對這個REQUEST所做的回應
+三位數 
+1XX => 請求被接受，需要繼續處理
+2XX => 接受 成功
+3XX=>  重新導向
+4XX =>客戶端GG
+5XX=>伺服器GG
+結圖
+
+找STATUS CODE
+網路 => 重新整理
+
+專門處理404 NOT FOUND
+在* 設定 res.status(404)
+新稱HTML
+sendFile => 導回首頁 "/" (href 跟 app routing 一樣)
+
+302 Found=> 原本確實存在 但暫時已經被改變位置
+做法跟前一個一樣
