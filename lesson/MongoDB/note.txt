@@ -1,0 +1,50 @@
+mongoDB 裡面的 bin 複製路徑 開terminal到那裏 打mongo
+
+BSON => Binary Json support more datatype, but only machine can read
+
+show dbs => 看有哪些資料庫 (mongoDB 有很多資料庫，但要有資料才會顯現出來)
+db => 顯示幕前的db
+use tryDB => 使用tryDB ，若沒有則創建一個
+show collections => 列出所有collections (collections= MySQL的tables、documents = objects)
+
+CRUD
+docs => server => MongoDB CRUD Operation
+
+Create Insertion
+db.[collection_name].insertOne({object to insert})
+若沒有自己設定_id會自動加一個_Id (像SQL的primary key)
+db.[collection_name].insertMany([object1,object2,......]}
+db.[collection_name].insert() => 上述兩個綜合體，input可以放object or array of object，但回傳的result資訊比較少 => 建議用前兩個
+
+
+Read Find (query document)
+db.[collection_name].find() => 列出所有collections下面的資料
+db.[collection_name].find({name:"Wilson Ren})  // filter object，找到所有符合條件的object
+cls => 清空
+Advanced:
+nested object => key 要用string包起來
+db.[collection_name].find({"scholarship.merit":2500})
+comparison operator
+eq ==
+gt >
+gte >= 
+lt <
+lte <=
+
+db.[collection_name].find({"scholarship.merit":{$gt:2500}})
+
+db.[collection_name].find({major :{$in:[EE,chem]}}) // 很常可以取代麻煩的or語法
+
+Update
+db.[collect_name].updateOne({},{$set:{name:Frank,age:25},$currentDate:{lastModified:true}})
+//par1 : filter 找到要update的Object
+//par2 : $set:{name:Frank,age:25} => 要更換的東西 lastModified => default false 設成true會在物件裡面新增最後修改的時間
+// 若不只一個，就修改第一個找到的
+updateMany用法一樣，但會全改
+
+
+Delete
+deleteOne({major:"Chem"}) => 刪掉第一個符合條件的
+deleteMany({major:"Chem"}) => 刪掉全部符合條件的
+deleteMany() => collection 全刪
+
