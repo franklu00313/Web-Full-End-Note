@@ -9,23 +9,15 @@
     <title></title>
     <meta name="description" content="" />
     <!--link到sass版的css-->
-    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <!-- 設定網站圖示 -->
     <link rel="shortcut icon" href="" />
     <link rel="bookmark" href="" />
   </head>
   <body>
-    <h1>Welcome to homepage!</h1>
-    <% for (let i =0;i<3;i++){%>
-    <p><%= i%></p>
-    <% } %>
-    <h1>Simple Form</h1>
-    <form action="/form" method="post">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" />
-      <label for="age">Age</label>
-      <input type="number" id="age" name="age" />
-      <button>submit</button>
-    </form>
+    <h1>請確認資料是否正確!</h1>
+    <h2>名字 : <%=name %></h2>
+    <h2>年齡 :<%=age %></h2>
+    <button><h2>確認正確!</h2></button>
   </body>
 </html>

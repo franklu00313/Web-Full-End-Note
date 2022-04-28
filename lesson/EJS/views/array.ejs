@@ -9,23 +9,29 @@
     <title></title>
     <meta name="description" content="" />
     <!--link到sass版的css-->
-    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <!-- 設定網站圖示 -->
     <link rel="shortcut icon" href="" />
     <link rel="bookmark" href="" />
   </head>
   <body>
-    <h1>Welcome to homepage!</h1>
-    <% for (let i =0;i<3;i++){%>
-    <p><%= i%></p>
-    <% } %>
-    <h1>Simple Form</h1>
-    <form action="/form" method="post">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" />
-      <label for="age">Age</label>
-      <input type="number" id="age" name="age" />
-      <button>submit</button>
-    </form>
+    <h1>Programming Languages Trending</h1>
+    <br />
+    <table>
+      <tr>
+        <th>name</th>
+        <th>rating</th>
+        <th>popularity</th>
+        <th>trending</th>
+      </tr>
+      <% languages.forEach((n)=>{ %>
+      <tr>
+        <td><%= n.name %></td>
+        <td><%= n.rating %></td>
+        <td><%= n.popularity %></td>
+        <td><%= n.trending %></td>
+      </tr>
+      <% }) %>
+    </table>
   </body>
 </html>

@@ -8,4 +8,27 @@
 h1 {
   background-color: antiquewhite;
 }
+
+table,
+tr,
+th,
+td {
+  border-collapse: collapse;
+  border: 1px solid #bbbbbb;
+}
+
+table {
+  margin: 1rem;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+tr,
+th,
+td {
+  padding: 0.25rem 0.5rem;
+}
 /*# sourceMappingURL=style.css.map */
