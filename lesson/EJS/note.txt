@@ -1,0 +1,21 @@
+EJS embedded JS
+simple template language
+generate HTML by JS
+npm module
+
+副檔名 .ejs (基本上就是在寫HTML)
+下載ejs language support
+res.render("index.ejs",{otional obj})
+可以傳送到ejs裡面
+js再new object時候 property name == variable name  => {name} replace {name:name}
+在EJS裡面要打JS => 
+<% %> => 當JS程式碼讀過去
+<%= %> => 要去計算、取得裡面的值
+
+
+
+ejs檔案必須再views裡面! (default)
+
+ejs table => implement
+ejs array => implement
+
