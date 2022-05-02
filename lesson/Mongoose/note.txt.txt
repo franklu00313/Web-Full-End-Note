@@ -1,0 +1,70 @@
+Mongoose
+connect mongo to website
+a kind of ODM (object document modeling)  ORM則是object relational modeling => for SQL
+a module in npm
+
+Get started
+npm install express nodemon ejs mongoose
+.catch .then
+
+Model & Schema
+
+Schema => 定義一個collection裡面的document應該長什麼樣子 (因此一個schema對應到一個collection)
+Model => 一個constructor，使用schema並創造出object(document) 的instance，responsible for creating & reading documents from db
+
+.model是一個constructor，吃單數大寫名字+schema，傳出來的model會在之後的create & reading 中被使用 (就像是mongodb中的collection)
+
+find => array，若無回傳空array
+findOne => object，若無回傳 null
+
+update()
+updateOne()
+updateMany()
+
+findOneAndUpdate => 多一個第三參數options{new:true}會回傳更改的object
+find
+
+deleteOne()
+deleteMany()
+findOneAndDelete
+
+Schema types
+string number date boolean object objectID Array
+schema換寫法，為了用validators
+
+all type Validator => 用來確認data有沒有符合規定好ㄉ需求
+type:datatype(若typecasting 可以成功也OK)
+required:[true false,"  如果沒填要回傳給使用者啥 ", function說明啥時required會為true]
+default: value
+若存進去時有東西不在schema中，會直接被略過並不會有事
+
+string validators
+uppercase 不確定是否可以自己 typecasting?
+lowercase
+enum (enumerate) : ["chinese","english" ...]，只能在其中出現不然就GG
+minlength 最小長度
+maxlength 最大長度
+
+Number validator => min max enum
+
+https://mongoosejs.com/docs/schematypes.html#schematype-options
+
+update的時候並不會考慮schema的validators => 要讓update時也檢查是否符合validators的話\
+=> 第三個參數 {runValidators:true} => OK!
+
+
+Instance method
+all the instances in the schema can use the same method，這邊的THIS指的是 instance itself
+
+Static method
+belongs to model(not schema)，裡面的 this 指的是model
+
+
+Middleware (類似instance method，每一個object都會這樣做)
+在某一個function執行前後可以加入
+
+SOP
+1. create schema
+2. instance method / static method
+3. middleware
+4. create method
