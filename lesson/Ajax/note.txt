@@ -1,0 +1,23 @@
+AJAX => Asynchronous JavaScript and XML
+
+js ia a single-thread programming language => 從上執行到下 => sync(同步) => 一次只做一件事情
+
+async非同步 => 一次做很多事情，JS 會跳過 async code先執行後面的CODE，等到Web API 執行完之後才丟回來給JS
+
+雖然JS引擎本身是同步的，但可以跟WebAPI(ex:addEventListener, setTimeOut etc)一同執行、溝通，達到非同步的效果
+
+兩張圖(自己一張、網路一張)
+
+fs.readFileSync vs fs.readFile
+
+Asynchronous function 可以 handle more operations (因為 syncronous 要等一個執行完才能執行下一個)，但要小心沒注意到的地方會產生BUG(EX:還沒讀進來就console.log())
+
+Callback hell
+
+
+.then => 不加大括號會直接default return
+
+兩個 reject會抓到哪個? => 都會抓到，看哪個先發生
+
+
+async await try catch
