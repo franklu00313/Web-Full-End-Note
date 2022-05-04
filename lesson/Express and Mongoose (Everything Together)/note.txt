@@ -1,0 +1,11 @@
+get started
+view public styles npm init npm install...
+
+Insert data from HTML form
+製作一個 submit form => 傳到後端 => 存到 mongodb
+1. 建構一個module folder,獨立一個js檔案，建構schema&MODEL，然後輸出MODEL好的OBJECT 
+2. 建立一個route: /students/insert (get) => 輸出 input form action post 
+3. /students/insert (post) => 吃使用者輸入的table => 傳送到mongoDB => 根據接受OR拒絕render不同的ejs檔案(都要負回首頁連結)給USER
+4. /students => 建立 get route => 去 MONGODB FIND (記得await) => 找到之後 render到 student.ejs
+5. 建立 students.ejs => <%> 輸出NAME
+6. async 做 error handling (res.send GG message)，加不合法route & 導向404頁面
