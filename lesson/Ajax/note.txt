@@ -19,5 +19,7 @@ Callback hell
 
 兩個 reject會抓到哪個? => 都會抓到，看哪個先發生
 
-
 async await try catch
+
+async await 使用上更簡便，但是跟  Promise的運作原理並不相同 
+(promise is async but await is sync)

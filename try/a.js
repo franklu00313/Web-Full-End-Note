@@ -1,11 +1,46 @@
-const languages = [
-  { name: "Python", rating: 9.5, popularity: 9.7, trending: "super hot" },
-  { name: "Java", rating: 8.6, popularity: 8.2, trending: "same" },
-  { name: "C++", rating: 6.6, popularity: 7.7, trending: "same" },
-  { name: "PHP", rating: 2.5, popularity: 4.7, trending: "decreasing" },
-  { name: "JavaScript", rating: 8.5, popularity: 8.1, trending: "same" },
-];
+// function a() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => resolve("apple"), 2000);
+//   });
+// }
 
-languages.forEach((i) => {
-  console.log(i);
-});
+// function b() {
+//   setTimeout(() => "apple", 2000);
+// }
+
+// async function aSync() {
+//   let aa = await b();
+//   console.log(aa);
+// }
+
+// aSync();
+
+function promiseFn(num, time = 500) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      num ? resolve(`${num}, 成功`) : reject("失敗");
+    }, time);
+  });
+}
+
+async function getData2() {
+  try {
+    // 專注在成功
+    const data1 = await promiseFn(1);
+    const data2 = await promiseFn(0);
+    console.log(data1, data2);
+  } catch (err) {
+    // 專注在錯誤
+    console.log("catch", err);
+  }
+  try {
+    // 專注在成功
+    const data1 = await promiseFn(1);
+    const data2 = await promiseFn(10);
+    console.log(data1, data2);
+  } catch (err) {
+    // 專注在錯誤
+    console.log("catch", err);
+  }
+}
+getData2();
