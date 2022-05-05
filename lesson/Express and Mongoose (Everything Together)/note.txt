@@ -9,3 +9,15 @@ Insert data from HTML form
 4. /students => 建立 get route => 去 MONGODB FIND (記得await) => 找到之後 render到 student.ejs
 5. 建立 students.ejs => <%> 輸出NAME
 6. async 做 error handling (res.send GG message)，加不合法route & 導向404頁面
+
+member personal page
+1. 建立一個 route for :username ，要根據username去DB裡面找資料，全部印出來 render 到 memberPage.ejs
+2. 建立 memberPage.ejs : 讓後端個人使用者的所有資料以 table 的方式在這裡呈現
+3. 更改 members.ejs : 讓名字變成 anchor tag 能直接連到該user的 memberPage route
+
+findOne找不到會回傳NULL => 不管有沒有成功找到都不會報錯 => try catch抓不到這部分 => 要用 !==null 來判斷
+
+
+Updating data (設定 route => /members/edit/:username)
+
+1. 

@@ -1,0 +1,53 @@
+<!-- 尚缺 check & eyes 的功能 -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--網頁相關資訊-->
+    <meta name="author" content="Chieh" />
+    <title></title>
+    <meta name="description" content="" />
+    <!--link到sass版的css-->
+    <link rel="stylesheet" href="/styles/style.css" />
+    <!-- 設定網站圖示 -->
+    <link rel="shortcut icon" href="" />
+    <link rel="bookmark" href="" />
+  </head>
+  <body>
+    <h1>
+      Create <br />
+      Account
+    </h1>
+    <form action="/members/insert" method="post">
+      <label for="username"></label>
+      <input type="text" name="username" id="username" placeholder="Username" />
+      <br />
+      <label for="studentID"></label>
+      <input
+        type="text"
+        name="studentID"
+        id="studentID"
+        placeholder="Student ID"
+      />
+      <br />
+      <label for="password"></label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password"
+      />
+      <br />
+      <p>
+        By signing up, you're agree to our <b>Terms & Conditions</b> and
+        <b>Privacy Policy</b>
+      </p>
+      <button type="submit">Sign up</button>
+      <p>
+        Already have an account? <a href="/"><b>Login</b></a>
+      </p>
+    </form>
+  </body>
+</html>

@@ -9,12 +9,19 @@
     <title></title>
     <meta name="description" content="" />
     <!--link到sass版的css-->
-    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <!-- 設定網站圖示 -->
     <link rel="shortcut icon" href="" />
     <link rel="bookmark" href="" />
   </head>
   <body>
-    <h1>This is homepage</h1>
+    <ul>
+      <% data.forEach((member)=>{ %>
+      <li>
+        <a href="/members/<%= member.username%>"><%= member.username %></a>
+      </li>
+      <% }) %>
+    </ul>
+    <a href="/">back to index page</a>
   </body>
 </html>

@@ -9,12 +9,20 @@
     <title></title>
     <meta name="description" content="" />
     <!--link到sass版的css-->
-    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <!-- 設定網站圖示 -->
     <link rel="shortcut icon" href="" />
     <link rel="bookmark" href="" />
   </head>
   <body>
-    <h1>This is homepage</h1>
+    <table>
+      <% for(let key in data){ %>
+      <tr>
+        <td><%= key %></td>
+        <td><%= data[key] %></td>
+      </tr>
+      <% } %>
+    </table>
+    <a href="/members">back to members page</a>
   </body>
 </html>
