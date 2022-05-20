@@ -1,0 +1,37 @@
+express js life cycle
+
+client => req => app.js(middleware,routes,res) => client (成循環可以作圖)
+
+
+Middleware 特徵
+1. 是夾再req&res中間會被執行的FUNCTION => 因此放在require & route中間
+2. 不管req類型，MIDDLEWARE再收到REQ時都會被執行
+3. 該function有三個INPUT，req,res,next(代表下一個middleware，這個沒寫下一個就不會被執行)
+寫範例DEMO CODE
+
+middleware也可以這樣設計 => req.method="POST"
+若在 middleware做res.send，app.get就不能做res.send了 (只能一次!)
+
+app.use("/routename",(res,req,next)) => 設定在某個route才使用該middleware
+也可以直接寫在 app.get("route","middleware1","middleware2"......,(res,req)=>{})的route裡面
+const middleware = (req,res,next)=>{......} => 在app.get裡面寫middleware變數 => 較common
+
+
+error handlng
+用middleware來設置error handler (但是要設計在最下面，方便讓所有的error都pass到下面!!!)
+
+app.use((err,req,res,next)=>{console.log(err};res.status(500).send("text message))
+
+
+第二種 error handler
+mongoose findOne => 剛剛說ㄉ第一種沒抓到，因為async的function要特別設定
+要用 function 多 next變數，try catch (裡面要有 next()) => 這樣才能傳到最下面的middleware error handler
+
+第三種
+app.get("/*") => 放在所有route的最下方，所有不被預期的路由都會跑來這裡 (404 not found)
+
+第四種 mongoose validator
+save validator error has to caught by .catch()
+
+findOneAndUpdate validator error 要寫在第四個參數 (err,doc)=>{if (err) {res.send(err);} else{res.send(doc)
+
