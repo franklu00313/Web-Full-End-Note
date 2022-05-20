@@ -20,4 +20,11 @@ findOne找不到會回傳NULL => 不管有沒有成功找到都不會報錯 => t
 
 Updating data (設定 route => /members/edit/:username)
 
-1. 
+route:members/edit/:id
+put => 全部取代 => 重新導向個人頁面
+1. 建route
+2. 找DB資料 記得考慮NULL => get 輸出到網站上
+3. USER 輸入 =>  PUT (by npm method override ) => 傳到後端 => findOneAndUpdate(), mew & runValidators
+4. 要處理傳進來格式跟Mongoose裡面不一樣的問題，記得async & await
+
+patch 更新一部分

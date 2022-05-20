@@ -35,3 +35,64 @@ save validator error has to caught by .catch()
 
 findOneAndUpdate validator error 要寫在第四個參數 (err,doc)=>{if (err) {res.send(err);} else{res.send(doc)
 
+
+
+Cookies
+key-value pair 來存
+儲存在 user's browser 裡面，跟 local&session storage很像，不同的是cookies mainly for reading server-side only，local/session can only be read on the client side
+sending request時，cookies會被包含在裡面一起被送出去 (local&session並不會)
+
+Cookies in server
+res.cookie("key","value"); // 寫某一個 key value pair進去使用者的cookie中
+可以去 F12 儲存空間=> Cookie 查看
+
+
+cookie-parser + req.cookies.name => 跑出所有的cookies 物件
+
+signing a cookie
+cookie problem => 可以被 user 端輕易修改
+要如何確保自己ㄉcookie沒被修改過 => sign the cookie!
+簽名 => 把前後加上自己的獨特字符 => 讀取回來的時候再把前後拿掉就好 (如果前後有動過就知道被改過了)
+並不是加密，單純做簽名而已
+在cookieParser("sign string") => middleware加的 string 就是簽章，但真正存的並不是那個string
+res.cookie("key","value",{signed:true});
+
+拿回來解除簽章
+req.signedCookies => 若被改過就會是 undefined
+
+Session
+
+常拿來跟 cookies 並用
+
+解決cookies儲存資料量小(4KB)的問題
+cookies 不能被拿來存重要的資料 => 別人隨便都可以看到 & 修改
+
+session是server的一個部分，是一個資料庫
+cookies 只儲存一個id，剩下的資訊在session中用key value pair存起來，key就是那ID
+可以同時解決上述兩個問題
+
+Session in Server
+express-session下載
+使用 session middleware
+res.session.<name> = <自己加>;
+注意:若沒有放到db裡面，server關掉就會消失
+
+saveUninitialized: false => 直到使用session功能才會出現 connext_sid在cookies
+
+environment variable
+process object
+a global object in node.js
+process.env
+下載dotenv
+寫在最上面 require("dotenv").config()
+SECRET=This is my top secret.
+process.env.SECRET
+node .gitignore => 送到github上面就看不到
+
+flash
+a place inside sessions,store some flash message to users(success or failure message)
+module name: connect-flash
+用flash前要先用session才能用
+要記得用middleware flash()
+req.flash("success_msg","text......")
+req.flash("succes_msg") => return "text......"
